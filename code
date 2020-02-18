@@ -1,0 +1,17 @@
+function chessKnight(cell) {
+    let count = 0;
+    let alphabets = {a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8};
+    let cellNumber = alphabets[cell[0]];
+    let array = [[-2,+1],[-1,+2],[-2,-1],[-1,-2],[+2,+1],[+1,+2],[+2,-1],[+1,-2]];
+    //loops through array to check if the knight can move to possible positions
+    for(let x = 0;x < array.length;x++){
+        if(cellNumber + array[x][0] > 0 && cellNumber + array[x][0] < 9){
+            if(Number(cell[1]) + array[x][1] > 0 && Number(cell[1])+array[x][1] < 9){
+                count++;
+                console.log(array[x])
+            }
+        }
+    }
+
+    return count;
+}
